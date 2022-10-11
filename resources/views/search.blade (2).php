@@ -1,17 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.template')
 
-@section('page-title')
-    Home - Kamus Dictionary
-@endsection
-
-@section('meta-description')
-    <meta name="description" content="Kamus Dictionary">
+@section('title')
+    {{$word}} - Kamus Dictionary
 @endsection
 
 @section('content')
-    <div class="lg:grid grid-cols-8 gap-2">
-        <div class="col-span-2 lg:w-3/4">
-            <h4 class="text-justify py-3"><b>English Word</b></h4>
+    <div class="row">
+        
+        <!-- English Word  -->
+        <div id="hide_div" class="col-md-2 bg-white mx-auto">
+            <h4 class="text-justify pt-2"><b>English Word</b></h4>
             {{$english_word->links()}}
             @foreach($english_word as $english)
                 <h5>
@@ -19,19 +17,22 @@
                 </h5>
             @endforeach
         </div>
-        <div class="col-span-4">
+        
+        <!-- Search Word  -->
+        <div class="bg-white col-md-6">
             @include('layouts.displayword')
         </div>
-        
-        <div class="col-span-2 lg:w-3/4 lg:ml-8">
-            <h4 class="text-justify py-3"><b>Hausa Word</b></h4>
-            
+
+        <!-- Hausa Word -->
+        <div id="hide_div" class="col-md-2 bg-white mx-auto">
+            <h4 class="text-justify pt-2"><b>Hausa Word</b></h4>
             {{$hausa_word->links()}}
             @foreach($hausa_word as $hausa)
                 <h5>
                     <a class="text-dark" href="/{{$hausa->wordHausa}}">{{$hausa->wordHausa}}</a>
                 </h5>
-            @endforeach
+            @endforeach  
         </div>
+    
     </div>
 @endsection

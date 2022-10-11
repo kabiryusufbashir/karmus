@@ -2,8 +2,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<title>@yield('page-title')</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Karmus Dictionary</title>
+    @yield('meta-description')
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -24,9 +26,9 @@
         </div>
         <div class="lg:col-span-4 hidden lg:block">
             <nav class="lg:flex justify-between list-none font-medium items-center">
-                <li class="py-1"><a href="#">Home</a></li>
-                <li class="py-1"><a href="#">Numbers</a></li>
-                <li class="py-1"><a href="#">Pronunciation</a></li>
+                <li class="py-1"><a href="/">Home</a></li>
+                <li class="py-1"><a href="{{ route('numbers') }}">Numbers</a></li>
+                <li class="py-1"><a href="{{ route('pronunciation') }}">Pronunciation</a></li>
                 <li class="py-1"><a href="#">Proverbs</a></li>
                 <li class="py-1"><a href="#">Add A New Word</a></li>
                 <li class=" bg-red-700 px-6 pt-2 pb-3 rounded border-none"><a href="#">Donate</a></li>
@@ -121,17 +123,17 @@
                     <div class="lg:grid grid-cols-2 gap-3">
                         <div>
                             <li class="py-1 hover:text-gray-800">
-                            <a class="flex items-center py-1" href="#">
+                            <a class="flex items-center py-1" href="/">
                                 <span>Home</span>
                             </a>
                             </li>
                             <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="#">
+                                <a class="flex items-center py-1" href="{{ route('numbers') }}">
                                     <span>Numbers</span>
                                 </a>
                             </li>
                             <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="#">
+                                <a class="flex items-center py-1" href="{{ route('pronunciation') }}">
                                     <span>Pronunciation</span>
                                 </a>
                             </li>

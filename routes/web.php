@@ -32,8 +32,8 @@ Route::get('/contact-us', function(){
     return view('contact');
 });
 
+Route::get('/all-numbers', [NumberController::class, 'numbers'])->name('numbers');
 Route::get('/all-pronunciations', [PronunciationController::class, 'pronunciations'])->name('pronunciation');
-Route::get('/all-numbers', [NumberController::class, 'numbers']);
 Route::get('/hausa-proverb', [ProverbController::class, 'hausaProverb']);
 Route::post('/contact-us', [SearchController::class, 'contact']);
 Route::get('/', [SearchController::class, 'index']);
