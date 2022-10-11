@@ -30,7 +30,7 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="pt-4">
+                <div class="border-t pt-4">
                     {{$numbers->links()}}
                 </div>
             @else
