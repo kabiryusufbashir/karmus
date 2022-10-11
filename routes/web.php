@@ -34,7 +34,7 @@ Route::get('/contact-us', function(){
 
 Route::get('/all-numbers', [NumberController::class, 'numbers'])->name('numbers');
 Route::get('/all-pronunciations', [PronunciationController::class, 'pronunciations'])->name('pronunciation');
-Route::get('/hausa-proverb', [ProverbController::class, 'hausaProverb']);
+Route::get('/hausa-proverb', [ProverbController::class, 'hausaProverb'])->name('proverbs');
 Route::post('/contact-us', [SearchController::class, 'contact']);
 Route::get('/', [SearchController::class, 'index']);
 Route::get('/autocompleteenglish', [SearchController::class, 'autocompleteenglish']);

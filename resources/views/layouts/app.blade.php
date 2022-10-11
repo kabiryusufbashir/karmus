@@ -29,7 +29,7 @@
                 <li class="py-1"><a href="/">Home</a></li>
                 <li class="py-1"><a href="{{ route('numbers') }}">Numbers</a></li>
                 <li class="py-1"><a href="{{ route('pronunciation') }}">Pronunciation</a></li>
-                <li class="py-1"><a href="#">Proverbs</a></li>
+                <li class="py-1"><a href="{{ route('proverbs') }}">Proverbs</a></li>
                 <li class="py-1"><a href="#">Add A New Word</a></li>
                 <li class=" bg-red-700 px-6 pt-2 pb-3 rounded border-none"><a href="#">Donate</a></li>
             </nav>
@@ -138,7 +138,7 @@
                                 </a>
                             </li>
                             <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="#">
+                                <a class="flex items-center py-1" href="{{ route('proverbs') }}">
                                     <span>Proverbs</span>
                                 </a>
                             </li>

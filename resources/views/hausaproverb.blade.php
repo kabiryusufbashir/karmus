@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('layouts.app')
 
 @section('meta')
 <meta name="description" content="Hausa Proverb">
@@ -10,27 +10,27 @@
 
 @section('content')
 
-    <div class="row py-2 mb-4">
-        <div class="col-md-12 bg-success mx-auto">
-            <h2 class="text-center pt-2 text-white">Hausa Proverbs</h2>
+    <div class="py-2 mb-4">
+        <div class="w-full bg-success mx-auto">
+            <h2 class="text-2xl text-center py-2 text-white">Hausa Proverbs</h2>
         </div>
     </div>
             
-    <div class="row">
-        <div class="col-md-12 bg-white">
+    <div class="">
+        <div class="w-full bg-white">
             @if(count($proverbs) > 0)
-                <div class="row d-flex justify-content-between">
+                <div class="lg:grid grid-cols-2 gap-2">
                     @foreach($proverbs as $proverb)
-                        <div class="col-md-5 m-4 p-4 border shadow">
+                        <div class="m-4 p-4 border shadow">
                             <h5><b>{{$loop->index + 1}}) Karin Magana</b></h5>
                             <h5>{{$proverb->hausa}}</h5>
-                            <hr>
+                            <hr class="py-2">
                             <h5><b>Ma'ana</b></h5>
                             <h5>{{$proverb->sharhi}}</h5>
                         </div>
                     @endforeach
                 </div>
-                <div class="row d-flex justify-content-center border-top pt-4">
+                <div class="border-t pt-4">
                     {{$proverbs->links()}}
                 </div>
             @else
