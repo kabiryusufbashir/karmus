@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.submit-button{
+    @apply mx-auto bg-green-600 border-0 px-3 py-2 rounded-sm text-white;
+}
+
+.input-field{
+    @apply border border-gray-300 rounded py-3 px-6 w-full my-2 focus:outline-none;
+}
