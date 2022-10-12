@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
 </head>
 <body>
     <!-- Navigation  -->
@@ -221,11 +222,11 @@
         <!-- Sign Up  -->
         <div id="sign-up-form">
             <div id="sign-up-form-content">
-                <div id="sign-up-form-header" class="bg-green-600 text-white p-4 flex justify-between">
+                <div id="sign-up-form-header" class="bg-green-600 text-white p-4 flex justify-between rounded-tl-xl rounded-tr-xl">
                     <span id="closeModalRecord" class="cursor-pointer ml-auto">X</span>
                 </div>
-                <div id="records-body" class="p-4">
-                    <h1 class="px-8 text-center text-2xl font-medium">Create an Account on Kamus Dictionary</h1>
+                <div id="records-body" class="p-4 bg-white rounded-bl-xl rounded-br-xl">
+                    <h1 class="px-8 py-3 text-xl font-medium">Create an Account on Kamus Dictionary</h1>
                     <!-- Add record  -->
                     <div id="addRecordForm">
                         <form id="storeRecordForm" action="#" method="POST" class="px-6 lg:px-8 pb-8">
@@ -257,5 +258,6 @@
             </div>     
         </div>
     </div>
+    @livewireScripts
 </body>
 </html>

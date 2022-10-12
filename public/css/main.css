@@ -1,5 +1,5 @@
 #sign-up-form{
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     z-index: 300;
     left: 0;
@@ -19,5 +19,4 @@
 #sign-up-form-content{
     margin: 2% auto;
     width: 500px;
-    background: #FFFFFF;
 }
