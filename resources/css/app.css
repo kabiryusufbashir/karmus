@@ -7,5 +7,5 @@
 }
 
 .input-field{
-    @apply border border-gray-400 rounded py-2 px-6 w-full my-2 focus:outline-none;
+    @apply border border-gray-400 rounded py-2 px-3 w-full my-2 focus:outline-none;
 }
