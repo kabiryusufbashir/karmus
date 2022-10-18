@@ -1,4 +1,5 @@
 let addANewWord = document.querySelector('.addANewWord')
+let addANewWordFooter = document.querySelector('.addANewWordFooter')
 let signUpForm = document.querySelector('#sign-up-form')
 let closeModalSignUp = document.querySelector('#closeModalSignUp')
 

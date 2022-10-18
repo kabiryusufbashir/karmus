@@ -31,7 +31,7 @@
                 <li class="py-1"><a href="{{ route('numbers') }}">Numbers</a></li>
                 <li class="py-1"><a href="{{ route('pronunciation') }}">Pronunciation</a></li>
                 <li class="py-1"><a href="{{ route('proverbs') }}">Proverbs</a></li>
-                <li class="py-1 addANewWord"><a href="#">Add A New Word</a></li>
+                <li class="py-1 addANewWord cursor-pointer">Add A New Word</li>
                 <li class=" bg-red-700 px-6 pt-2 pb-3 rounded border-none"><a href="#">Donate</a></li>
             </nav>
         </div>
@@ -49,7 +49,7 @@
             <hr>
             <li class="py-3 px-8">
                 <a href="#" class="flex justify-between items-center">
-                    <span>Where We Work</span>
+                    <span>Numbers</span>
                     &nbsp;&nbsp;
                     <span><i class="fa-solid fa-building text-2xl"></i></span>
                 </a>
@@ -57,7 +57,7 @@
             <hr>
             <li class="py-3 px-8">
                 <a href="#" class="flex justify-between items-center">
-                    <span>Who We Are</span>
+                    <span>Pronunciation</span>
                     &nbsp;&nbsp;
                     <span><i class="fa-solid fa-person-circle-question text-2xl"></i></span>
 
@@ -66,7 +66,7 @@
             <hr>
             <li class="py-3 px-8">
                 <a href="#" class="flex justify-between border-b-1 items-center">
-                    <span>What We Do</span>
+                    <span>Proverbs</span>
                     &nbsp;&nbsp;
                     <span><i class="fa-solid fa-briefcase text-2xl"></i></span>
                 </a>
@@ -74,7 +74,7 @@
             <hr>
             <li class="py-3 px-8">
                 <a href="#" class="flex justify-between border-b-1 items-center">
-                    <span>Blog</span>
+                    <span>Add a New Word</span>
                     &nbsp;&nbsp;
                     <span><i class="fa-brands fa-blogger-b text-2xl"></i></span>
                 </a>
@@ -93,6 +93,14 @@
                     <span>Contact Us</span>
                     &nbsp;&nbsp;
                     <span><i class="fa-solid fa-headset text-2xl"></i></span>
+                </a>
+            </li>
+            <hr>
+            <li class="py-3 px-8">
+                <a href="#" class="flex justify-between items-center">
+                    <span>Donate</span>
+                    &nbsp;&nbsp;
+                    <span><i class="fa-solid fa-house-lock text-2xl"></i></span>
                 </a>
             </li>
         </div>
@@ -123,54 +131,52 @@
                 <nav class="list-none text-white">
                     <div class="lg:grid grid-cols-2 gap-3">
                         <div>
-                            <li class="py-1 hover:text-gray-800">
+                            <li class="py-1 hover:text-green-400">
                             <a class="flex items-center py-1" href="/">
                                 <span>Home</span>
                             </a>
                             </li>
-                            <li class="py-1 hover:text-gray-800">
+                            <li class="py-1 hover:text-green-400">
                                 <a class="flex items-center py-1" href="{{ route('numbers') }}">
                                     <span>Numbers</span>
                                 </a>
                             </li>
-                            <li class="py-1 hover:text-gray-800">
+                            <li class="py-1 hover:text-green-400">
                                 <a class="flex items-center py-1" href="{{ route('pronunciation') }}">
                                     <span>Pronunciation</span>
                                 </a>
                             </li>
-                            <li class="py-1 hover:text-gray-800">
+                            <li class="py-1 hover:text-green-400">
                                 <a class="flex items-center py-1" href="{{ route('proverbs') }}">
                                     <span>Proverbs</span>
                                 </a>
                             </li>
-                            <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="#">
-                                    <span>Add A New Word</span>
-                                </a>
+                            <li class="py-1 hover:text-green-400 addANewWordFooter cursor-pointer">
+                                <span class="flex items-center py-1">Add A New Word</span>
                             </li>
                         </div>
                         <div>
-                            <li class="py-1 hover:text-gray-800">
+                            <li class="py-1 hover:text-green-400">
                                 <a class="flex items-center py-1" href="#">
                                     <span>FAQs</span>
                                 </a>
                             </li>
-                            <li class="py-1 hover:text-gray-800">
+                            <li class="py-1 hover:text-green-400">
                                 <a class="flex items-center py-1" href="#">
                                     <span>About Karmus</span>
                                 </a>
                             </li>
-                            <li class="py-1 hover:text-gray-800">
+                            <li class="py-1 hover:text-green-400">
                                 <a class="flex items-center py-1" href="#">
                                     <span>Sign Up</span>
                                 </a>
                             </li>
-                            <li class="py-1 hover:text-gray-800">
+                            <li class="py-1 hover:text-green-400">
                                 <a class="flex items-center py-1" href="#">
                                     <span>Sign In</span>
                                 </a>
                             </li>
-                            <li class="py-1 hover:text-gray-800">
+                            <li class="py-1 hover:text-green-400">
                                 <a class="flex items-center py-1" href="#">
                                     <span>Contact Us</span>
                                 </a>
@@ -183,25 +189,25 @@
                 <div>
                     <h1 class="text-3xl font-bold mb-4">Follow Us</h1>
                     <nav class="list-none text-white">
-                        <li class="py-1 hover:text-gray-800">
+                        <li class="py-1 hover:text-green-400">
                             <a class="flex items-center py-1" href="https://twitter.com/kamusunhausa/">
                                 <span><i class="fa-brands fa-twitter text-xl"></i></span> &nbsp;&nbsp;
                                 <span>Twitter</span>
                             </a>
                         </li>
-                        <li class="py-1 hover:text-gray-800">
+                        <li class="py-1 hover:text-green-400">
                             <a class="flex items-center py-1" href="https://fb.me/KamusunHausa/">
                                 <span><i class="fa-brands fa-facebook text-xl"></i></span> &nbsp;&nbsp;
                                 <span>Facebook</span>
                             </a>
                         </li>
-                        <li class="py-1 hover:text-gray-800">
+                        <li class="py-1 hover:text-green-400">
                             <a class="flex items-center py-1" href="https://instagram.com/kamusunhausa/">
                                 <span><i class="fa-brands fa-instagram text-xl"></i></span> &nbsp;&nbsp;
                                 <span>Instagram</span>
                             </a>
                         </li>
-                        <li class="py-1 hover:text-gray-800">
+                        <li class="py-1 hover:text-green-400">
                             <a class="flex items-center py-1" href="https://wa.me/message/BAXZQJJ3WFEBA1/">
                                 <span><i class="fa-brands fa-whatsapp text-xl"></i></span> &nbsp;&nbsp;
                                 <span>WhatsApp</span>
