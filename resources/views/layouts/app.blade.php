@@ -31,7 +31,7 @@
                 <li class="py-1"><a href="{{ route('numbers') }}">Numbers</a></li>
                 <li class="py-1"><a href="{{ route('pronunciation') }}">Pronunciation</a></li>
                 <li class="py-1"><a href="{{ route('proverbs') }}">Proverbs</a></li>
-                <li class="py-1"><a href="#">Add A New Word</a></li>
+                <li class="py-1 addANewWord"><a href="#">Add A New Word</a></li>
                 <li class=" bg-red-700 px-6 pt-2 pb-3 rounded border-none"><a href="#">Donate</a></li>
             </nav>
         </div>
@@ -219,11 +219,13 @@
             </footer>
         </div>
         <!-- Sign Up  -->
-        <div id="sign-up-form">
+        <div id="sign-up-form" class="hidden">
             <div id="sign-up-form-content">
                 <div id="sign-up-form-header" class="bg-green-600 text-white p-4 flex justify-between rounded-tl-xl rounded-tr-xl">
-                    <span id="closeModalRecord" class="cursor-pointer ml-auto">X</span>
+                    <span id="closeModalSignUp" class="cursor-pointer ml-auto">X</span>
                 </div>
+
+                <!-- Sign Up Form  -->
                 <div id="records-body" class="p-4 bg-white rounded-bl-xl rounded-br-xl">
                     <h1 class="px-8 py-3 text-xl font-medium">Create an Account on Kamus Dictionary</h1>
                     <!-- Add record  -->
@@ -254,8 +256,38 @@
                         </form>
                     </div>
                 </div>
+                <!-- End of Sign Up Form  -->
+
+                <!-- Sign Up Form Content  -->
+                <div id="records-body" class="p-4 bg-white rounded-bl-xl rounded-br-xl">
+                    <h1 class="px-8 py-3 text-xl font-medium">Log In</h1>
+                    <!-- Add record  -->
+                    <div id="addRecordForm">
+                        <form id="storeRecordForm" action="#" method="POST" class="px-6 lg:px-8 pb-8">
+                            @csrf
+                            <div>
+                                <input required type="email" name="email" value="{{old('email')}}" placeholder="Email Address" class="input-field">
+                                @error('email')
+                                    {{$message}}
+                                @enderror
+                            </div>
+                            <div>
+                                <input required type="password" name="password" value="{{old('password')}}" placeholder="Password" class="input-field">
+                                @error('password')
+                                    {{$message}}
+                                @enderror
+                            </div>
+                            <div class="text-center mt-6">
+                                <button class="submit-button">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- End of Sign In Form Content  -->
+                
             </div>     
         </div>
     </div>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>
