@@ -50,7 +50,7 @@ class ContributorController extends Controller
             ]);
 
             try{
-                if(Auth::guard('contributors')->attempt(['email' => $request->email, 'password' => $request->password])){
+                if(Auth::guard('contributors')->attempt(['email' => $request->email, 'password' => $password])){
                     $request->session()->regenerate();
                     return redirect()->route('landing-page')->with('success', $data['name'].' created successfully!');
                 }else{
@@ -62,6 +62,26 @@ class ContributorController extends Controller
             
         }catch(Expection $e){
             return back()->with(['error' => 'Please try again later! ('.$e.')']);
+        }
+    }
+
+    public function signIn(Request $request){
+        $data = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        $password = Hash::make($request->password);
+
+        try{
+            if(Auth::guard('contributors')->attempt(['email' => $request->email, 'password' => $request->password])){
+                $request->session()->regenerate();
+                return redirect()->route('landing-page')->with('success', 'Welcome to Kamus Dictionary');
+            }else{
+                return back()->with('error', 'Incorrect login details');
+            }
+        }catch(Exception $e){
+            return redirect('/')->with('error', $e->getMessage());
         }
     }
 

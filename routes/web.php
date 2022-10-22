@@ -36,6 +36,7 @@ Route::post('/logout', [ContributorController::class, 'logout'])->name('contribu
 
 //Create Account Contributors
 Route::post('/create-account', [ContributorController::class, 'signUp'])->name('create-account');
+Route::post('/sign-in', [ContributorController::class, 'signIn'])->name('sign-in');
 
 
 Route::get('/all-numbers', [NumberController::class, 'numbers'])->name('numbers');

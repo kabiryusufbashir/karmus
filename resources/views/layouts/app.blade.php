@@ -341,7 +341,7 @@
                         <h1 class="px-8 py-3 text-xl font-medium text-center">Sign In to your Account</h1>
                         <!-- Add record  -->
                         <div>
-                            <form action="#" method="POST" class="px-6 lg:px-8 pb-8">
+                            <form action="{{ route('sign-in') }}" method="POST" class="px-6 lg:px-8 pb-8">
                                 @csrf
                                 <div>
                                     <input required type="email" name="email" value="{{old('email')}}" placeholder="Email Address" class="input-field">
