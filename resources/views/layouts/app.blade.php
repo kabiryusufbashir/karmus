@@ -12,6 +12,7 @@
 </head>
 <body>
     <!-- Navigation  -->
+    <div class="text-center text-2xl text-green-600">@include('layouts.messages')</div>
     <div id="navDesktop" class="z-40 fixed bg-green-600 text-white w-full lg:grid grid-cols-5 gap-3 shadow lg:px-24 px-8 py-4 flex justify-between items-center">
         <div class="flex justify-between w-full items-center">
             <div id="menu" class="lg:hidden cursor-pointer lg:ml-auto">
@@ -357,7 +358,7 @@
                         <h1 class="px-8 py-3 text-xl font-medium">Create an Account on Kamus Dictionary</h1>
                         <!-- Add record  -->
                         <div>
-                            <form action="#" method="POST" class="px-6 lg:px-8 pb-8">
+                            <form action="{{ route('create-account') }}" method="POST" class="px-6 lg:px-8 pb-8">
                                 @csrf
                                 <div>
                                     <input required type="text" name="name" value="{{old('name')}}" placeholder="Full Name" class="input-field">
@@ -381,7 +382,7 @@
                                     <h2 class="hover:underline cursor-pointer">Don't have an account yet?</h2>
                                 </div>
                                 <div class="mt-3 text-right">
-                                    <button class="submit-button">SIGN UP</button>
+                                    <button class="submit-button" type="submit">SIGN UP</button>
                                 </div>
                             </form>
                         </div>

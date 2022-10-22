@@ -6,6 +6,15 @@ let signUpFormLink = document.querySelector('#signUpForm')
 let signUpLink = document.querySelector('#signUpLink')
 let closeModalSignUp = document.querySelector('#closeModalSignUp')
 
+closeModalSignUp.addEventListener('click', ()=>{
+    alert()    
+    if(signUpForm.classList.contains('hidden')){
+        signUpForm.classList.remove('hidden');
+    }else{
+        signUpForm.classList.add('hidden')
+    }
+})
+
 addANewWord.addEventListener('click', ()=>{
     if(signUpForm.classList.contains('hidden')){
         signUpForm.classList.remove('hidden');
@@ -24,10 +33,3 @@ signUpLink.addEventListener('click', ()=>{
     signInForm.classList.remove('hidden')
 })
 
-closeModalSignUp.addEventListener('click', ()=>{
-    if(signUpForm.classList.contains('hidden')){
-        signUpForm.classList.remove('hidden');
-    }else{
-        signUpForm.classList.add('hidden');
-    }
-})

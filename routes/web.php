@@ -8,6 +8,7 @@ use App\Http\Controllers\ProverbController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WordController;
+use App\Http\Controllers\ContributorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,6 @@ use App\Http\Controllers\WordController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/faqs', function(){
     return view('faqs');
@@ -32,11 +30,17 @@ Route::get('/contact-us', function(){
     return view('contact');
 });
 
+Route::get('/', [ContributorController::class, 'index'])->name('landing-page');
+// Route::get('/', [SearchController::class, 'index']);
+
+//Create Account Contributors
+Route::post('/create-account', [ContributorController::class, 'signUp'])->name('create-account');
+
+
 Route::get('/all-numbers', [NumberController::class, 'numbers'])->name('numbers');
 Route::get('/all-pronunciations', [PronunciationController::class, 'pronunciations'])->name('pronunciation');
 Route::get('/hausa-proverb', [ProverbController::class, 'hausaProverb'])->name('proverbs');
 Route::post('/contact-us', [SearchController::class, 'contact']);
-Route::get('/', [SearchController::class, 'index']);
 Route::get('/autocompleteenglish', [SearchController::class, 'autocompleteenglish']);
 Route::get('/autocompletehausa', [SearchController::class, 'autocompletehausa']);
 Route::get('/getwords/', [SearchController::class, 'getwords']);
