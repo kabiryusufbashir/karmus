@@ -19,11 +19,11 @@ class ContributorController extends Controller
 {
 
     public function index(){
-        $latest_word = Word::inRandomOrder()->limit(1)->get();
+        $latest_word = Word::inRandomOrder()->where('status', 1)->limit(1)->get();
 
-        $english_word = Word::select('wordEnglish', 'id')->orderBy('wordEnglish','asc')->simplePaginate(15);
+        $english_word = Word::select('wordEnglish', 'id')->where('status', 1)->orderBy('wordEnglish','asc')->simplePaginate(15);
         
-        $hausa_word = Word::select('wordHausa', 'id')->orderBy('wordHausa','asc')->simplePaginate(15);
+        $hausa_word = Word::select('wordHausa', 'id')->where('status', 1)->orderBy('wordHausa','asc')->simplePaginate(15);
 
         return view('welcome', 
             [
@@ -83,6 +83,46 @@ class ContributorController extends Controller
         }catch(Exception $e){
             return redirect('/')->with('error', $e->getMessage());
         }
+    }
+
+    public function contributorAddWord(Request $request){
+        
+        $author = Auth::guard('contributors')->user()->name;
+
+        $word = new Word();
+
+        $word->wordEnglish = request('wordEnglish');
+        $word->wordHausa = request('wordHausa');
+        $word->meaning = request('meaning');
+        $word->maanarkamar = request('maanarkamar');
+        $word->author = $author;
+        $word->tilo = request('tilo');
+        $word->jami = request('jami');
+        $word->singular = request('singular');
+        $word->plural = request('plural');
+        $word->similar_word_one = request('similar_word_one');
+        $word->similar_word_two = request('similar_word_two');
+        $word->similar_word_three = request('similar_word_three');
+        $word->status = 0;
+        
+        //REMOVING WORD FROM WORD NOT FOUND TABLE
+        $addword = request('wordEnglish');
+        $checkword =  WordNotFound::where('word_not_found', $addword)->get();
+        if(count($checkword) > 0){
+            $checkword[0]->delete();
+        }
+
+        //CHECKING TO SEE IF A WORD EXISTS IN THE DATABASE
+        $wordEnglish = request('wordEnglish');
+        $wordHausa = request('wordHausa');
+        $checkIfWordExist =  Word::where('wordEnglish', '=', $wordEnglish)->where('wordHausa', '=', $wordHausa)->get();
+        if(count($checkIfWordExist) > 0){
+            return redirect()->route('landing-page')->with('error', $request->wordEnglish.' already Exists');
+        }
+
+        $word->save();
+
+        return redirect()->route('landing-page')->with('success', $request->wordEnglish.' Added Successfully');
     }
 
     public function logout()

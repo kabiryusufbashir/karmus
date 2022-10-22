@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "Poppins Light";
+    src: url("../fonts/Poppins/Poppins-Light.ttf");
+}
+
+body{
+    font-family: "Poppins Light";
+}
+
 #sign-up-form{
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;

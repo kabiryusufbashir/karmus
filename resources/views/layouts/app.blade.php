@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- Navigation  -->
-    <div class="text-center text-2xl text-green-600">@include('layouts.messages')</div>
+    <div class="text-center text-xl">@include('layouts.messages')</div>
     <div id="navDesktop" class="z-40 fixed bg-green-600 text-white w-full lg:grid grid-cols-6 gap-3 shadow lg:px-24 px-8 py-4 flex justify-between items-center">
         <div class="flex justify-between w-full items-center">
             <div id="menu" class="lg:hidden cursor-pointer lg:ml-auto">
@@ -250,17 +250,17 @@
                         <h1 class="px-8 py-3 text-xl font-medium">Add A New Word </h1>
                         <!-- Add record  -->
                         <div>
-                            <form action="#" method="POST" class="px-6 lg:px-8 pb-8">
+                            <form action="{{ route('contributor-add-word') }}" method="POST" class="px-6 lg:px-8 pb-8">
                                 @csrf
                                 <div class="grid grid-cols-2 gap-3 mb-1">
                                     <div>
-                                        <input required type="text" name="wordEnglish" value="{{old('wordEnglish')}}" placeholder="English Word" class="input-field">
+                                        <input required type="text" name="wordEnglish" value="{{old('wordEnglish')}}" placeholder="English Word *" class="input-field">
                                         @error('wordEnglish')
                                             {{$message}}
                                         @enderror
                                     </div>
                                     <div>
-                                        <input required type="text" name="wordHausa" value="{{old('wordHausa')}}" placeholder="Hausa Word" class="input-field">
+                                        <input required type="text" name="wordHausa" value="{{old('wordHausa')}}" placeholder="Hausa Word *" class="input-field">
                                         @error('wordHausa')
                                             {{$message}}
                                         @enderror
@@ -268,13 +268,13 @@
                                 </div>
                                 <div class="grid grid-cols-2 gap-3 mb-1">
                                     <div>
-                                        <input required type="text" name="meaning" value="{{old('meaning')}}" placeholder="Meaning" class="input-field">
+                                        <input required type="text" name="meaning" value="{{old('meaning')}}" placeholder="Meaning *" class="input-field">
                                         @error('meaning')
                                             {{$message}}
                                         @enderror
                                     </div>
                                     <div>
-                                        <input required type="text" name="maanarkamar" value="{{old('maanarkamar')}}" placeholder="Maanar Kamar" class="input-field">
+                                        <input required type="text" name="maanarkamar" value="{{old('maanarkamar')}}" placeholder="Maanar Kamar *" class="input-field">
                                         @error('maanarkamar')
                                             {{$message}}
                                         @enderror
@@ -282,13 +282,13 @@
                                 </div>
                                 <div class="grid grid-cols-2 gap-3 mb-1">
                                     <div>
-                                        <input required type="text" name="tilo" value="{{old('tilo')}}" placeholder="Tilo" class="input-field">
+                                        <input required type="text" name="tilo" value="{{old('tilo')}}" placeholder="Tilo *" class="input-field">
                                         @error('tilo')
                                             {{$message}}
                                         @enderror
                                     </div>
                                     <div>
-                                        <input required type="text" name="jami" value="{{old('jami')}}" placeholder="Jami" class="input-field">
+                                        <input required type="text" name="jami" value="{{old('jami')}}" placeholder="Jami *" class="input-field">
                                         @error('jami')
                                             {{$message}}
                                         @enderror
@@ -296,13 +296,13 @@
                                 </div>
                                 <div class="grid grid-cols-2 gap-3 mb-1">
                                     <div>
-                                        <input required type="text" name="singular" value="{{old('singular')}}" placeholder="Singular" class="input-field">
+                                        <input required type="text" name="singular" value="{{old('singular')}}" placeholder="Singular *" class="input-field">
                                         @error('singular')
                                             {{$message}}
                                         @enderror
                                     </div>
                                     <div>
-                                        <input required type="text" name="plural" value="{{old('plural')}}" placeholder="Plural" class="input-field">
+                                        <input required type="text" name="plural" value="{{old('plural')}}" placeholder="Plural *" class="input-field">
                                         @error('plural')
                                             {{$message}}
                                         @enderror
@@ -310,19 +310,19 @@
                                 </div>
                                 <div class="grid grid-cols-3 gap-3 mb-1">
                                     <div>
-                                        <input required type="text" name="similar_word_one" value="{{old('similar_word_one')}}" placeholder="Similar Word One" class="input-field">
+                                        <input type="text" name="similar_word_one" value="{{old('similar_word_one')}}" placeholder="Similar Word One" class="input-field">
                                         @error('similar_word_one')
                                             {{$message}}
                                         @enderror
                                     </div>
                                     <div>
-                                        <input required type="text" name="similar_word_two" value="{{old('similar_word_two')}}" placeholder="Similar Word Two" class="input-field">
+                                        <input type="text" name="similar_word_two" value="{{old('similar_word_two')}}" placeholder="Similar Word Two" class="input-field">
                                         @error('similar_word_two')
                                             {{$message}}
                                         @enderror
                                     </div>
                                     <div>
-                                        <input required type="text" name="similar_word_three" value="{{old('similar_word_three')}}" placeholder="Similar Word Three" class="input-field">
+                                        <input type="text" name="similar_word_three" value="{{old('similar_word_three')}}" placeholder="Similar Word Three" class="input-field">
                                         @error('similar_word_three')
                                             {{$message}}
                                         @enderror
