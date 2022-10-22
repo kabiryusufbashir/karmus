@@ -63,6 +63,11 @@ class ContributorController extends Controller
         }catch(Expection $e){
             return back()->with(['error' => 'Please try again later! ('.$e.')']);
         }
+    }
 
+    public function logout()
+    {
+        Auth::guard('contributors')->logout();
+        return redirect()->route('landing-page');
     }
 }

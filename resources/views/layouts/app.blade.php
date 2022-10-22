@@ -13,7 +13,7 @@
 <body>
     <!-- Navigation  -->
     <div class="text-center text-2xl text-green-600">@include('layouts.messages')</div>
-    <div id="navDesktop" class="z-40 fixed bg-green-600 text-white w-full lg:grid grid-cols-5 gap-3 shadow lg:px-24 px-8 py-4 flex justify-between items-center">
+    <div id="navDesktop" class="z-40 fixed bg-green-600 text-white w-full lg:grid grid-cols-6 gap-3 shadow lg:px-24 px-8 py-4 flex justify-between items-center">
         <div class="flex justify-between w-full items-center">
             <div id="menu" class="lg:hidden cursor-pointer lg:ml-auto">
                 <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
@@ -26,13 +26,25 @@
                 </a>
             </div>
         </div>
-        <div class="lg:col-span-4 hidden lg:block">
+        <div class="lg:col-span-5 hidden lg:block">
             <nav class="lg:flex justify-between list-none font-medium items-center">
                 <li class="py-1"><a href="/">Home</a></li>
                 <li class="py-1"><a href="{{ route('numbers') }}">Numbers</a></li>
                 <li class="py-1"><a href="{{ route('pronunciation') }}">Pronunciation</a></li>
                 <li class="py-1"><a href="{{ route('proverbs') }}">Proverbs</a></li>
                 <li class="py-1 addANewWord cursor-pointer">Add A New Word</li>
+                @if(Auth::guard('contributors')->user())
+                    <li class="py-1 cursor-pointer">{{ Auth::guard('contributors')->user()->name }}</li>
+                    <li class="py-1 cursor-pointer flex">
+                        <span>Logout</span>&nbsp;
+                        <form action="{{ route('contributor-logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="flex justify-between">
+                                <div><i class="text-black md:text-white fas fa-sign-out-alt"></i></div>
+                            </button>
+                        </form>
+                    </li>
+                @endif
                 <li class=" bg-red-700 px-6 pt-2 pb-3 rounded border-none"><a href="#">Donate</a></li>
             </nav>
         </div>

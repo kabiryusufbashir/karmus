@@ -31,6 +31,7 @@ Route::get('/contact-us', function(){
 });
 
 Route::get('/', [ContributorController::class, 'index'])->name('landing-page');
+Route::post('/logout', [ContributorController::class, 'logout'])->name('contributor-logout');
 // Route::get('/', [SearchController::class, 'index']);
 
 //Create Account Contributors

@@ -7,7 +7,6 @@ let signUpLink = document.querySelector('#signUpLink')
 let closeModalSignUp = document.querySelector('#closeModalSignUp')
 
 closeModalSignUp.addEventListener('click', ()=>{
-    alert()    
     if(signUpForm.classList.contains('hidden')){
         signUpForm.classList.remove('hidden');
     }else{
