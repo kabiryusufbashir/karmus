@@ -9,6 +9,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WordController;
 use App\Http\Controllers\ContributorController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,11 @@ Route::get('/contact-us', function(){
     return view('contact');
 });
 
+//Dashboard
+Route::get('/login', [DashboardController::class, 'index'])->name('login');
+Route::post('/login-dashboard', [DashboardController::class, 'login'])->name('login-dashboard');
+Route::post('/logout-dashboard', [DashboardController::class, 'logout'])->name('logout');
+
 Route::get('/', [ContributorController::class, 'index'])->name('landing-page');
 Route::post('/logout', [ContributorController::class, 'logout'])->name('contributor-logout');
 // Route::get('/', [SearchController::class, 'index']);
@@ -48,7 +54,7 @@ Route::get('/autocompleteenglish', [SearchController::class, 'autocompleteenglis
 Route::get('/autocompletehausa', [SearchController::class, 'autocompletehausa']);
 Route::get('/getwords/', [SearchController::class, 'getwords']);
 Route::post('/search', [SearchController::class, 'store']);
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // WORDS ROUTES
 Route::get('/words', function(){
