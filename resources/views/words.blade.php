@@ -13,55 +13,55 @@
                 </div>
             </div>
             
-            <div class="row justify-content-center">
+            <div class="grid grid-cols-2 gap-4">
                 @include('layouts.nav')
                 
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header"><h4>Add Word</h4></div>
-                        <div class="card-body">
+                <div>
+                    <div class="shadow p-9">
+                        <div><h4>Add Word</h4></div>
+                        <div>
                             <form action="/words" method="POST">
                                 @csrf 
                                 <div class="row my-3">
-                                    <input required type="text" name="wordEnglish" class="form-control" placeholder="Enter Word Name in English">
+                                    <input required type="text" name="wordEnglish" class="input-field" placeholder="Enter Word Name in English">
                                 </div>
                                 <div class="row my-3">
-                                    <input required type="text" name="wordHausa" class="form-control" placeholder="Enter Word Name in Hausa">
+                                    <input required type="text" name="wordHausa" class="input-field" placeholder="Enter Word Name in Hausa">
                                 </div>
                                 <div class="row my-3">
-                                    <textarea required class="form-control" placeholder="Meaning of the Word" name="meaning"></textarea>
+                                    <textarea required class="input-field" placeholder="Meaning of the Word" name="meaning"></textarea>
                                 </div>
                                 <div class="row my-3">
-                                    <textarea required class="form-control" placeholder="Ma'anar Kalma" name="maanarkamar"></textarea>
+                                    <textarea required class="input-field" placeholder="Ma'anar Kalma" name="maanarkamar"></textarea>
                                 </div>
                                 <div class="row my-3">
                                     <!-- <div class="col-md-6">
-                                        <input class="form-control" placeholder="Tilo" name="tilo">
+                                        <input class="input-field" placeholder="Tilo" name="tilo">
                                     </div> -->
                                     <div class="col-md-6">
-                                        <input class="form-control" placeholder="Jam'i" name="jami">
+                                        <input class="input-field" placeholder="Jam'i" name="jami">
                                     </div>
                                 </div>
                                 <div class="row my-3">
                                     <!-- <div class="col-md-6">
-                                        <input class="form-control" placeholder="Singular" name="singular">
+                                        <input class="input-field" placeholder="Singular" name="singular">
                                     </div> -->
                                     <div class="col-md-6">
-                                        <input class="form-control" placeholder="Plural" name="plural">
+                                        <input class="input-field" placeholder="Plural" name="plural">
                                     </div>
                                 </div>
                                 <div class="row my-3">
-                                    <input class="form-control" placeholder="Similar Word 1" name="similar_word_one">
+                                    <input class="input-field" placeholder="Similar Word 1" name="similar_word_one">
                                 </div>
                                 <div class="row my-3">
-                                    <input class="form-control" placeholder="Similar Word 2" name="similar_word_two">
+                                    <input class="input-field" placeholder="Similar Word 2" name="similar_word_two">
                                 </div>
                                 <div class="row my-3">
-                                    <input class="form-control" placeholder="Similar Word 3" name="similar_word_three">
+                                    <input class="input-field" placeholder="Similar Word 3" name="similar_word_three">
                                 </div>    
                                 <input style="display:none;" type="text" name="author" value="{{ Auth::user()->name }}">
                                 <div class="row my-3">
-                                    <input type="submit" value="Add Word" name="add-word" id="add-word" class="w-100 btn btn-success">
+                                    <input type="submit" value="Add Word" name="add-word" id="add-word" class="w-full bg-green-700 p-2 rounded text-white">
                                 </div>
                             </form>
                         </div>
@@ -85,7 +85,7 @@
                                         <form action="/search_word" id="searchWordDashBoard" method="POST">
                                             @csrf
                                             <div class="input-group mb-3">
-                                                <input type="text" name="search_dashboard" id="search" class="form-control w-100" placeholder="Bincika < > Search" aria-label="Search" aria-describedby="basic-addon2">
+                                                <input type="text" name="search_dashboard" id="search" class="input-field w-100" placeholder="Bincika < > Search" aria-label="Search" aria-describedby="basic-addon2">
                                                 <div class="input-group-append">
                                                     <input class="input-group-text bg-success text-white" id="basic-addon2" type="submit" value="Search">
                                                 </div>
@@ -97,8 +97,8 @@
                                 
                                 <div class="bg-white text-dark" id="searchFeedbackDashboard"></div>
                                 
-                                <table id="wordAllDashboard" class="table table-striped table-responsive">
-                                    <tr>
+                                <table id="wordAllDashboard" class="w-full">
+                                    <tr class="text-left">
                                         <th>Hausa</th>
                                         <th>English</th>
                                         <th>Ma'anar Kalma</th>
@@ -114,7 +114,7 @@
                                         <th></th>
                                     </tr>
                                     @foreach($words as $word)
-                                    <tr>
+                                    <tr class="border-b">
                                         <td>{{$word->wordHausa}}</td>
                                         <td>{{$word->wordEnglish}}</td>
                                         <td>{{$word->maanarkamar}}</td>
@@ -126,12 +126,12 @@
                                         <td>{{$word->similar_word_one}}</td>
                                         <td>{{$word->similar_word_two}}</td>
                                         <td>{{$word->similar_word_three}}</td>
-                                        <td><a href="/words/words/edit/{{$word->id}}" class="btn btn-warning">Edit</a></td>
+                                        <td><a href="/words/words/edit/{{$word->id}}" class="bg-green-700 p-2 rounded text-white">Edit</a></td>
                                         <td>
                                             <form action="/words/{{$word->id}}" method="POST">
                                                 @csrf 
                                                 @method('DELETE')
-                                                <input type="submit" value="DELETE" class="btn btn-danger">
+                                                <input type="submit" value="DELETE" class="bg-red-700 p-2 rounded text-white">
                                             </form>
                                         </td>
                                     </tr>    

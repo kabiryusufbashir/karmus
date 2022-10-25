@@ -18,14 +18,14 @@
                 <div>
                     <div class="shadow p-9">
                         <div class="text-2xl">
-                            <h4>All Users</h4>
+                            <h4>All Contributor</h4>
                         </div>
                         <div>
-                            @if(count($users) > 0)
+                            @if(count($contributors) > 0)
                                 
                                 <div class="row">
                                     <div class="col-md-12">
-                                        {{$users->links()}}
+                                        {{$contributors->links()}}
                                     </div>
                                 </div>
                                 
@@ -37,12 +37,12 @@
                                         <th>Email</th>
                                         <th></th>
                                     </tr>
-                                    @foreach($users as $user)
+                                    @foreach($contributors as $user)
                                     <tr class="border-b">
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->email}}</td>
                                         <td>
-                                            <form action="/users/{{$user->id}}" method="POST">
+                                            <form action="/contributors/{{$user->id}}" method="POST">
                                                 @csrf 
                                                 @method('DELETE')
                                                 <input type="submit" value="DELETE" class="bg-red-700 p-2 rounded text-white">

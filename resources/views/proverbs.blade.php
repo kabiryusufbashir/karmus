@@ -13,30 +13,30 @@
                 </div>
             </div>
             
-            <div class="row justify-content-center">
+            <div class="grid grid-cols-2 gap-4">
                 @include('layouts.nav')
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header"><h4>Add Proverb</h4></div>
+                <div>
+                    <div class="shadow p-9">
+                        <div class="text-2xl"><h4>Add Proverb</h4></div>
                         <div class="card-body">
                             <form action="/proverbs" method="POST">
                                 @csrf 
                                 <div class="row my-3">
-                                    <input required type="text" name="hausa" class="form-control" placeholder="Karin Magana">
+                                    <input required type="text" name="hausa" class="input-field" placeholder="Karin Magana">
                                 </div>
                                 <div class="row my-3">
-                                    <input required type="text" name="sharhi" class="form-control" placeholder="Sharhi Karin Maganar">
+                                    <input required type="text" name="sharhi" class="input-field" placeholder="Sharhi Karin Maganar">
                                 </div>
                                 <!-- <div class="row my-3">
-                                    <input required type="text" name="english" class="form-control" placeholder="Proverbs">
+                                    <input required type="text" name="english" class="input-field" placeholder="Proverbs">
                                 </div>
                                 
                                 <div class="row my-3">
-                                    <input required type="text" name="idiomatic" class="form-control" placeholder="Idiomatic">
+                                    <input required type="text" name="idiomatic" class="input-field" placeholder="Idiomatic">
                                 </div> -->
                                 <input style="display:none;" type="text" name="author" value="{{ Auth::user()->name }}">
                                 <div class="row my-3">
-                                    <input type="submit" value="Add Proverb" name="add-proverb" id="add-proverb" class="w-100 btn btn-success">
+                                    <input type="submit" value="Add Proverb" name="add-proverb" id="add-proverb" class="w-full bg-green-700 p-2 rounded text-white">
                                 </div>
                             </form>
                         </div>
@@ -59,7 +59,7 @@
                                         <form action="/search_proverb" id="searchProverbDashBoard" method="POST">
                                             @csrf
                                             <div class="input-group mb-3">
-                                                <input type="text" name="search_proverb_dashboard" id="search" class="form-control w-100" placeholder="Search Proverb" aria-label="Search" aria-describedby="basic-addon2">
+                                                <input type="text" name="search_proverb_dashboard" id="search" class="input-field w-100" placeholder="Search Proverb" aria-label="Search" aria-describedby="basic-addon2">
                                                 <div class="input-group-append">
                                                     <input class="input-group-text bg-success text-white" id="basic-addon2" type="submit" value="Search">
                                                 </div>
@@ -82,18 +82,18 @@
                                         <th></th>
                                     </tr>
                                     @foreach($proverbs as $proverb)
-                                    <tr>
+                                    <tr class="border-b">
                                         <td>{{$proverb->hausa}}</td>
                                         <td>{{$proverb->sharhi}}</td>
                                         <!-- <td>{{$proverb->english}}</td>
                                         <td>{{$proverb->idiomatic}}</td> -->
                                         <td>{{$proverb->author}}</td>
-                                        <td><a href="/proverbs/proverbs/edit/{{$proverb->id}}" class="btn btn-warning">Edit</a></td>
+                                        <td><a href="/proverbs/proverbs/edit/{{$proverb->id}}" class="bg-green-700 p-2 rounded text-white">Edit</a></td>
                                         <td>
                                             <form action="/proverbs/{{$proverb->id}}" method="POST">
                                                 @csrf 
                                                 @method('DELETE')
-                                                <input type="submit" value="DELETE" class="btn btn-danger">
+                                                <input type="submit" value="DELETE" class="bg-red-700 p-2 rounded text-white">
                                             </form>
                                         </td>
                                     </tr>    

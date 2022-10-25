@@ -141,4 +141,21 @@ class WordController extends Controller
 
         return redirect('/words')->with('msg','Word Deleted');
     }
+
+    public function addwordcontribute($id){
+        
+        $word = Word::find($id);
+        $word->status = 1;
+        $word->save();
+
+        return redirect('/words')->with('success','Word Added');
+    }
+
+    public function deletewordcontribute($id){
+        
+        $deletewordcontribute = Word::findOrFail($id);
+        $deletewordcontribute->delete();
+
+        return redirect('/words')->with('success','Word Deleted');
+    }
 }

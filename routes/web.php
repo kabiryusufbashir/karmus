@@ -64,7 +64,9 @@ Route::get('/words', function(){
 Route::get('/words', [WordController::class, 'index']);
 Route::post('/words', [WordController::class, 'store']);
 Route::post('/addwordnotfound/{id}', [WordController::class, 'addwordnotfound']);
+Route::post('/addwordcontribute/{id}', [WordController::class, 'addwordcontribute']);
 Route::delete('/deletewordnotfound/{id}', [WordController::class, 'deletewordnotfound']);
+Route::delete('/deletewordcontribute/{id}', [WordController::class, 'deletewordcontribute']);
 Route::post('/search_word', [WordController::class, 'search']);
 Route::get('/words/words/edit/{id}', [WordController::class, 'edit']);
 Route::patch('/words/words/edit/{id}', [WordController::class, 'update']);
@@ -97,8 +99,10 @@ Route::post('/search_pronunciation', [PronunciationController::class, 'search'])
 
 // USERS ROUTES
 Route::get('/users', [UserController::class, 'index']);
+Route::get('/contributors', [UserController::class, 'contributor']);
 Route::post('/users', [UserController::class, 'store']);
 Route::get('/users/users/edit/{id}', [UserController::class, 'edit']);
 Route::patch('/users/users/edit/{id}', [UserController::class, 'update']);
 Route::delete('/users/{id}', [UserController::class, 'destroy']);
+Route::delete('/contributors/{id}', [UserController::class, 'contributorDestroy']);
 Route::get('/{id}', [SearchController::class, 'show']);

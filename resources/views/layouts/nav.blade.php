@@ -10,7 +10,7 @@
                     </a>
                 </div>
                 
-                <div class="bars col-md-11 py-4 px-4 bg-gray-500">
+                <div class="bars col-md-11 py-4 px-4 bg-gray-700">
                     <a class="text-white" href="/words">
                         <i class="fas fa-language"></i>
                         <br>Words
@@ -22,7 +22,7 @@
                         <br>Number
                     </a>    
                 </div>
-                <div class="bars col-md-11 py-4 px-4 bg-gray-500">
+                <div class="bars col-md-11 py-4 px-4 bg-gray-700">
                     <a class="text-white" href="/proverbs">
                         <i class="fas fa-language"></i>
                         <br>Proverbs
@@ -34,13 +34,19 @@
                         <br>Pronunciation
                     </a>
                 </div>
-                <div class="bars col-md-11 py-4 px-4 bg-gray-500">
+                <div class="bars col-md-11 py-4 px-4 bg-gray-700">
                     <a class="text-white" href="/users">
                         <i class="fas fa-users"></i>
                         <br>Users
                     </a>    
                 </div>
                 <div class="bars col-md-11 py-4 px-4 bg-green-600">
+                    <a class="text-white" href="/contributors">
+                        <i class="fas fa-users"></i>
+                        <br>Contributors
+                    </a>    
+                </div>
+                <div class="bars col-md-11 py-4 px-4 bg-gray-700">
                     <a class="text-white" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
