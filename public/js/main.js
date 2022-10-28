@@ -1,4 +1,7 @@
 let addANewWord = document.querySelector('.addANewWord')
+let donateNowButton = document.querySelector('.donateNow')
+let donateNowContent = document.querySelector('#donateNowContent')
+let addWordForm = document.querySelector('#addWordForm')
 let signUpForm = document.querySelector('#sign-up-form')
 let signInForm = document.querySelector('#signInForm')
 let signInLink = document.querySelector('#signInLink')
@@ -14,11 +17,27 @@ closeModalSignUp.addEventListener('click', ()=>{
     }
 })
 
-addANewWord.addEventListener('click', ()=>{
+donateNowButton.addEventListener('click', ()=>{
     if(signUpForm.classList.contains('hidden')){
         signUpForm.classList.remove('hidden');
+        donateNowContent.classList.remove('hidden')
+        addWordForm.classList.add('hidden')
     }else{
         signUpForm.classList.add('hidden');
+        donateNowContent.classList.add('hidden')
+        addWordForm.classList.remove('hidden')
+    }
+})
+
+addANewWord.addEventListener('click', ()=>{
+    if(signUpForm.classList.contains('hidden')){
+        donateNowContent.classList.add('hidden')
+        signUpForm.classList.remove('hidden');
+        addWordForm.classList.remove('hidden')
+    }else{
+        donateNowContent.classList.remove('hidden')
+        signUpForm.classList.add('hidden');
+        addWordForm.classList.add('hidden')
     }
 })
 
