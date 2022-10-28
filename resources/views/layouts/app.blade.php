@@ -248,7 +248,7 @@
                     <h1 class="px-8 py-3 text-xl font-medium text-center">Donate Now</h1>
                     <!-- Add record  -->
                     <div>
-                        <form action="{{ route('sign-in') }}" method="POST" class="px-6 lg:px-8 pb-8">
+                        <form action="{{ route('donate-now') }}" method="POST" class="px-6 lg:px-8 pb-8">
                             @csrf
                             <div>
                                 <input required type="text" name="name" value="{{old('name')}}" placeholder="Full Name" class="input-field">

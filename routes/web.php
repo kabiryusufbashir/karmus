@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\WordController;
 use App\Http\Controllers\ContributorController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DonationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -106,3 +107,6 @@ Route::patch('/users/users/edit/{id}', [UserController::class, 'update']);
 Route::delete('/users/{id}', [UserController::class, 'destroy']);
 Route::delete('/contributors/{id}', [UserController::class, 'contributorDestroy']);
 Route::get('/{id}', [SearchController::class, 'show']);
+
+//Donation
+Route::post('/donate-now', [DonationController::class, 'pay'])->name('donate-now');
