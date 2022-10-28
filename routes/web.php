@@ -109,4 +109,5 @@ Route::delete('/contributors/{id}', [UserController::class, 'contributorDestroy'
 Route::get('/{id}', [SearchController::class, 'show']);
 
 //Donation
-Route::post('/donate-now', [DonationController::class, 'pay'])->name('donate-now');
+Route::post('/pay', [DonationController::class, 'redirectToGateway'])->name('pay');
+Route::get('/payment/callback', [DonationController::class, 'handleGatewayCallback']);
