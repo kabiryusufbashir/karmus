@@ -73,23 +73,19 @@
                                 
                                 <table id="ProverbAllDashboard" class="table table-striped table-responsive">
                                     <tr>
-                                        <th>Hausa</th>
-                                        <th>Sharhi</th>
-                                        <!-- <th>English</th>
-                                        <th>Idiomatic</th> -->
-                                        <th>Author</th>
-                                        <th></th>
-                                        <th></th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">Hausa</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">Sharhi</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">Author</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500"></th>
+                                        <th class="px-6 py-2 text-xs text-gray-500"></th>
                                     </tr>
                                     @foreach($proverbs as $proverb)
-                                    <tr class="border-b">
-                                        <td>{{$proverb->hausa}}</td>
-                                        <td>{{$proverb->sharhi}}</td>
-                                        <!-- <td>{{$proverb->english}}</td>
-                                        <td>{{$proverb->idiomatic}}</td> -->
-                                        <td>{{$proverb->author}}</td>
-                                        <td><a href="/proverbs/proverbs/edit/{{$proverb->id}}" class="bg-green-700 p-2 rounded text-white">Edit</a></td>
-                                        <td>
+                                    <tr class="divide-y divide-gray-300 border-b-2">
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$proverb->hausa}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$proverb->sharhi}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$proverb->author}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500"><a href="/proverbs/proverbs/edit/{{$proverb->id}}" class="bg-green-700 p-2 rounded text-white">Edit</a></td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">
                                             <form action="/proverbs/{{$proverb->id}}" method="POST">
                                                 @csrf 
                                                 @method('DELETE')

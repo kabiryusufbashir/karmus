@@ -72,22 +72,22 @@
                                 <div class="bg-white text-dark" id="searchFeedbackDashboard"></div>
                                 
                                 <table id="NumberAllDashboard" class="w-full">
-                                    <tr class="text-left">
-                                        <th>No</th>
-                                        <th>English</th>
-                                        <th>Hausa</th>
-                                        <th>Author</th>
-                                        <th></th>
-                                        <th></th>
+                                    <tr class="text-left whitespace-nowrap">
+                                        <th class="px-6 py-2 text-xs text-gray-500">No</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">English</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">Hausa</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">Author</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500"></th>
+                                        <th class="px-6 py-2 text-xs text-gray-500"></th>
                                     </tr>
                                     @foreach($numbers as $number)
-                                    <tr class="border-b">
-                                        <td>{{$number->digit}}</td>
-                                        <td>{{$number->english}}</td>
-                                        <td>{{$number->hausa}}</td>
-                                        <td>{{$number->author}}</td>
-                                        <td><a href="/numbers/numbers/edit/{{$number->id}}" class="bg-green-700 p-2 rounded text-white">Edit</a></td>
-                                        <td>
+                                    <tr class="divide-y divide-gray-300 border-b-2">
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$number->digit}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$number->english}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$number->hausa}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$number->author}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500"><a href="/numbers/numbers/edit/{{$number->id}}" class="bg-green-700 p-2 rounded text-white">Edit</a></td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">
                                             <form action="/numbers/{{$number->id}}" method="POST">
                                                 @csrf 
                                                 @method('DELETE')

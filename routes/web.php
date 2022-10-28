@@ -56,6 +56,7 @@ Route::get('/autocompletehausa', [SearchController::class, 'autocompletehausa'])
 Route::get('/getwords/', [SearchController::class, 'getwords']);
 Route::post('/search', [SearchController::class, 'store']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/donations', [HomeController::class, 'donations']);
 
 // WORDS ROUTES
 Route::get('/words', function(){

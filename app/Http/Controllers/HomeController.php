@@ -9,6 +9,7 @@ use App\SearchWord;
 use App\Word;
 use App\User;
 use App\Number;
+use App\Models\Donation;
 use DB;
 
 class HomeController extends Controller
@@ -35,5 +36,10 @@ class HomeController extends Controller
         $numbers_track = DB::select('SELECT author, COUNT(author) as `numbers_entered` FROM numbers GROUP BY author ORDER BY `numbers_entered` DESC');
 
         return view('home', compact('wordcontribute', 'numbers_track', 'user_track','words','no_of_words','no_of_numbers','no_of_word_not_found','no_of_users','no_of_search','allwordnotfound','wordnotfound'));
+    }
+
+    public function donations(){
+        $donations = Donation::orderBy('created_at', 'desc')->paginate(10);
+        return view('donations')->with('donations', $donations);
     }
 }

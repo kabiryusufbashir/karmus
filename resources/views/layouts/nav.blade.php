@@ -47,6 +47,12 @@
                     </a>    
                 </div>
                 <div class="bars col-md-11 py-4 px-4 bg-gray-700">
+                    <a class="text-white" href="/donations">
+                        <i class="fas fa-users"></i>
+                        <br>Donation
+                    </a>    
+                </div>
+                <div class="bars col-md-11 py-4 px-4 bg-green-600">
                     <a class="text-white" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">

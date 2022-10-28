@@ -98,36 +98,36 @@
                                 <div class="bg-white text-dark" id="searchFeedbackDashboard"></div>
                                 
                                 <table id="wordAllDashboard" class="w-full">
-                                    <tr class="text-left">
-                                        <th>Hausa</th>
-                                        <th>English</th>
-                                        <th>Ma'anar Kalma</th>
-                                        <th>Meaning</th>
-                                        <th>Tilo</th>
-                                        <th>Jam'i</th>
-                                        <th>Singular</th>
-                                        <th>Plural</th>
-                                        <th>Similar Word 1</th>
-                                        <th>Similar Word 2</th>
-                                        <th>Similar Word 3</th>
-                                        <th></th>
-                                        <th></th>
+                                    <tr class="text-left whitespace-nowrap">
+                                        <th class="px-6 py-2 text-xs text-gray-500">Hausa</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">English</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">Ma'anar Kalma</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">Meaning</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">Tilo</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">Jam'i</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">Singular</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">Plural</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">Similar Word 1</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">Similar Word 2</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">Similar Word 3</th>
+                                        <th class="px-6 py-2 text-xs text-gray-500"></th>
+                                        <th class="px-6 py-2 text-xs text-gray-500"></th>
                                     </tr>
                                     @foreach($words as $word)
-                                    <tr class="border-b">
-                                        <td>{{$word->wordHausa}}</td>
-                                        <td>{{$word->wordEnglish}}</td>
-                                        <td>{{$word->maanarkamar}}</td>
-                                        <td>{{$word->meaning}}</td>
-                                        <td>{{$word->tilo}}</td>
-                                        <td>{{$word->jami}}</td>
-                                        <td>{{$word->singular}}</td>
-                                        <td>{{$word->plural}}</td>
-                                        <td>{{$word->similar_word_one}}</td>
-                                        <td>{{$word->similar_word_two}}</td>
-                                        <td>{{$word->similar_word_three}}</td>
-                                        <td><a href="/words/words/edit/{{$word->id}}" class="bg-green-700 p-2 rounded text-white">Edit</a></td>
-                                        <td>
+                                    <tr class="divide-y divide-gray-300 border-b-2">
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$word->wordHausa}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$word->wordEnglish}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$word->maanarkamar}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$word->meaning}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$word->tilo}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$word->jami}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$word->singular}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$word->plural}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$word->similar_word_one}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$word->similar_word_two}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">{{$word->similar_word_three}}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500"><a href="/words/words/edit/{{$word->id}}" class="bg-green-700 p-2 rounded text-white">Edit</a></td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">
                                             <form action="/words/{{$word->id}}" method="POST">
                                                 @csrf 
                                                 @method('DELETE')
