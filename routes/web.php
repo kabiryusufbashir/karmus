@@ -32,6 +32,18 @@ Route::get('/contact-us', function(){
     return view('contact');
 });
 
+Route::get('/about-us', function(){
+    return view('about');
+});
+
+Route::get('/donate-now', function(){
+    return view('donate');
+});
+
+Route::get('/contribute-word', function(){
+    return view('contribute');
+});
+
 //Dashboard
 Route::get('/login', [DashboardController::class, 'index'])->name('login');
 Route::post('/login-dashboard', [DashboardController::class, 'login'])->name('login-dashboard');

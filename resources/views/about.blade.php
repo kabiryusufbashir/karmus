@@ -1,11 +1,11 @@
-@extends('layouts.template')
+@extends('layouts.app')
+
+@section('page-title')
+    About Kamus- Kamus Dictionary
+@endsection
 
 @section('meta')
 <meta name="description" content="Kamusdictionary.com is built with the aim of learning in the academia and inspire creativity, communication, and expression in a world powered by words. Kamus intends to assist English speakers to learn Hausa Language and vice versa">
-@endsection
-
-@section('title')
-    About Kamus- Kamus Dictionary
 @endsection
 
 @section('content')
@@ -19,14 +19,8 @@
     <div id="about-kamus" class="row">
         <div class="col-md-12 bg-white text-center">
             <div class="row">
-                <div class="col-md-12 text-center py-3">
+                <div class="col-md-12 text-center py-3 text-2xl font-medium">
                     <h3>About Kamus Dictionary</h3>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-4 mx-auto">
-                    <img class="img-responsive w-50 mb-4" src="/images/kamus.png" alt="Kamus Logo">
                 </div>
             </div>
             
@@ -51,15 +45,9 @@
                     </p>
                 </div>
             </div>
-            
-            <div class="row">
-                <div class="col-md-5 mx-auto mt-2">
-                    <img class="img-responsive w-50 mb-4" src="/images/logo.jpg" alt="Kamus Logo">
-                </div>
-            </div>
 
             <div class="row">
-                <div class="col-md-12 text-center py-2">
+                <div class="col-md-12 text-center py-2 text-2xl font-medium">
                     <h3>Game da Kamus Dictionary</h3>
                 </div>
             </div>
