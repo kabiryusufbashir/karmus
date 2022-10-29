@@ -120,10 +120,28 @@
     </div>
     <!-- End of Navigation Bar  -->
 
-    <div class="relative top-24 py-6 lg:px-24 px-8">
+    <!-- Search Box  -->
+	<div class="relative top-20 py-6 mb-16 border-b-2">
+        <div class="w-5/6 mx-auto">
+            <form id="searchWordForm" action="/search" method="POST">
+                @csrf
+                <div class="ml-64 my-1 grid grid-cols-6 gap-3 items-center align-middle">
+                    <div class="my-1 col-span-4">
+                        <!-- <input class="border input-field" id="search" name="searchhausa" type="text" placeholder="Bincika" /> -->
+                        <input required class="border input-field" id="searchenglish" name="searchhausa" type="text" placeholder="Search" />
+                    </div>
+                    <div class="my-1 col-span-2">
+                        <input id="search_submit" class="bg-green-600 rounded submit-button cursor-pointer" type="submit" value="Search">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="relative top-8 lg:px-24 px-8">
         @yield('content')
     </div>
-	<!-- <div id="app"></div> -->
 
     <!-- Footer  -->
     <div class="relative top-24">

@@ -33,6 +33,7 @@ class SearchController extends Controller
 
     public function store(Request $request)
     {
+        // dd('ddd');
         $word = request('searchhausa');
         
         if($word == null){
