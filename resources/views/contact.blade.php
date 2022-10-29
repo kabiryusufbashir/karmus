@@ -38,7 +38,7 @@
                     <h6 class="text-center"><i>Malam Kabir Yusuf Bashir C.E.O <a href="https://teampiccolo.com">teampiccolo.com</a></i></h6>
                     <div class="row text-left">
                         <div class="col-sm-8 mx-auto">
-                            <div class="grid grid-cols-2 gap-4 items-center shadow p-8 mt-5">
+                            <div class="lg:grid grid-cols-2 gap-4 items-center shadow p-8 mt-5">
                                 <div class="col-sm-6">
                                     <form class="form" action="/contact-us" method="POST">
                                         @csrf

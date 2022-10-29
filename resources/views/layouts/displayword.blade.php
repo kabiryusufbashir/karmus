@@ -7,7 +7,7 @@
 </div>
 
 <!-- ENGLISH & HAUSA      -->
-<div class="py-2  border d-flex flex-justify-content-between">
+<div class="py-2 border d-flex flex-justify-content-between">
     <div class="px-3">
         <h4 class="text-justify"><b>English</b></h4>
         <h5 class="text-justify">{{$word_search->wordEnglish}}</h5>

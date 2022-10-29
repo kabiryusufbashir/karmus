@@ -12,7 +12,7 @@
 
     <div class="py-2">
         <div class="w-full bg-success mx-auto">
-            <h2 class="text-2xl text-center py-2 text-white">Hausa Proverbs</h2>
+            <h2 class="text-2xl text-center py-2">Hausa Proverbs</h2>
         </div>
     </div>
             

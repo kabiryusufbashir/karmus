@@ -17,7 +17,7 @@
         </div>
     </div>
     
-    <div class="w-3/4 border mx-auto my-3 p-2 shadow">
+    <div class="lg:w-3/4 w-full border mx-auto my-3 p-2 shadow">
         <p>
             <b>Note:</b> Hausa Language does not have the letters "P", "Q"and "X" but has some Special Characters as shown below. The letter (Ƴ ƴ) (y with a right hook) is used only in Niger; in Nigeria it is written as ('Y 'y).
         </p>
@@ -26,7 +26,7 @@
         </p>
     </div>
 
-    <div class="grid grid-cols-4 gap-3">
+    <div class="lg:grid grid-cols-4 gap-3">
         <div class="mx-auto border my-4 shadow">
             @if($alphabets->count() > 0)
                 <h3 class="p-3 text-xl border-b">Hausa Alphabets/ Harrufan Hausa</h3>

@@ -13,10 +13,13 @@
 <body>
     <!-- Navigation  -->
     <div class="text-center text-xl">@include('layouts.messages')</div>
-    <div id="navDesktop" class="z-40 fixed bg-green-600 text-white w-full lg:grid grid-cols-6 gap-3 shadow lg:px-24 px-8 py-4 flex justify-between items-center">
+    <div id="navDesktop" class="z-40 fixed bg-green-600 text-white w-full lg:grid grid-cols-6 gap-3 shadow lg:px-24 px-2 py-4 flex justify-between items-center">
         <div class="flex justify-between w-full items-center">
             <div id="menu" class="lg:hidden cursor-pointer lg:ml-auto">
                 <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+            </div>
+            <div class="lg:hidden">
+                <li class="bg-red-700 px-3 pt-1 pb-2 rounded border-none cursor-pointer list-none">Donate</li>
             </div>
             <div class="">
                 <a href="#">
@@ -53,7 +56,7 @@
     <div id="navMobile" class="w-full fixed h-screen z-30 hidden bg-white py-8">
         <div class="list-none p-2 text-xl border-t bg-white pt-20">
             <li class="py-3 px-8">
-                <a href="#" class="flex justify-between items-center">
+                <a href="/" class="flex justify-between items-center">
                     <span>Home</span>
                     &nbsp;&nbsp;
                     <span><i class="fa-solid fa-house text-2xl"></i></span>
@@ -61,7 +64,7 @@
             </li>
             <hr>
             <li class="py-3 px-8">
-                <a href="#" class="flex justify-between items-center">
+                <a href="{{ route('numbers') }}" class="flex justify-between items-center">
                     <span>Numbers</span>
                     &nbsp;&nbsp;
                     <span><i class="fa-solid fa-building text-2xl"></i></span>
@@ -69,7 +72,7 @@
             </li>
             <hr>
             <li class="py-3 px-8">
-                <a href="#" class="flex justify-between items-center">
+                <a href="{{ route('pronunciation') }}" class="flex justify-between items-center">
                     <span>Pronunciation</span>
                     &nbsp;&nbsp;
                     <span><i class="fa-solid fa-person-circle-question text-2xl"></i></span>
@@ -78,7 +81,7 @@
             </li>
             <hr>
             <li class="py-3 px-8">
-                <a href="#" class="flex justify-between border-b-1 items-center">
+                <a href="{{ route('proverbs') }}" class="flex justify-between border-b-1 items-center">
                     <span>Proverbs</span>
                     &nbsp;&nbsp;
                     <span><i class="fa-solid fa-briefcase text-2xl"></i></span>
@@ -86,15 +89,15 @@
             </li>
             <hr>
             <li class="py-3 px-8">
-                <a href="#" class="flex justify-between border-b-1 items-center">
+                <span class="flex justify-between border-b-1 items-center">
                     <span>Add a New Word</span>
                     &nbsp;&nbsp;
                     <span><i class="fa-brands fa-blogger-b text-2xl"></i></span>
-                </a>
+                </span>
             </li>
             <hr>
             <li class="py-3 px-8">
-                <a href="#" class="flex justify-between items-center">
+                <a href="/login" class="flex justify-between items-center">
                     <span>Log In</span>
                     &nbsp;&nbsp;
                     <span><i class="fa-solid fa-house-lock text-2xl"></i></span>
@@ -102,7 +105,7 @@
             </li>
             <hr>
             <li class="py-3 px-8">
-                <a href="#" class="flex justify-between items-center">
+                <a href="/contact-us" class="flex justify-between items-center">
                     <span>Contact Us</span>
                     &nbsp;&nbsp;
                     <span><i class="fa-solid fa-headset text-2xl"></i></span>
@@ -122,10 +125,10 @@
 
     <!-- Search Box  -->
 	<div class="relative top-20 py-6 mb-16 border-b-2">
-        <div class="w-5/6 mx-auto">
+        <div class="lg:w-5/6 w-full mx-auto px-2">
             <form id="searchWordForm" action="/search" method="POST">
                 @csrf
-                <div class="ml-64 my-1 grid grid-cols-6 gap-3 items-center align-middle">
+                <div class="lg:ml-64 my-1 lg:grid grid-cols-6 gap-3 items-center align-middle">
                     <div class="my-1 col-span-4">
                         <!-- <input class="border input-field" id="search" name="searchhausa" type="text" placeholder="Bincika" /> -->
                         <input required class="border input-field" id="searchenglish" name="searchhausa" type="text" placeholder="Search" />

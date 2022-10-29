@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="lg:grid grid-cols-8 gap-2 text-gray-700">
-        <div class="col-span-2 lg:w-3/4">
+        <div class="hidden lg:block col-span-2 lg:w-3/4">
             <h4 class="text-justify py-3"><b>English Word</b></h4>
             {{$english_word->links()}}
             @foreach($english_word as $english)
@@ -23,7 +23,7 @@
             @include('layouts.displayword')
         </div>
         
-        <div class="col-span-2 lg:w-3/4 lg:ml-8">
+        <div class="hidden lg:block col-span-2 lg:w-3/4 lg:ml-8">
             <h4 class="text-justify py-3"><b>Hausa Word</b></h4>
             
             {{$hausa_word->links()}}
