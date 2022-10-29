@@ -1,11 +1,11 @@
-@extends('layouts.template')
+@extends('layouts.app')
 
-@section('meta')
-<meta name="description" content="Never Let a Customer Leave Without Putting a Smile on his Face">
+@section('page-title')
+    Contact Us - Kamus Dictionary
 @endsection
 
-@section('title')
-    Contact Us - Kamus Dictionary
+@section('meta')
+    <meta name="description" content="Never Let a Customer Leave Without Putting a Smile on his Face">
 @endsection
 
 @section('content')
@@ -17,10 +17,10 @@
 
     <!-- CONTACT US Kamus Dictionary -->
     <div id="contact-us" class="row">
-        <div class="col-md-12 bg-white text-center">
+        <div class="w-full bg-white text-center">
             
             <div class="row">
-                <div class="col-md-12 text-center py-3">
+                <div class="w-full text-center py-3">
                     <h3>Contact Us</h3>
                 </div>
             </div>
@@ -38,46 +38,33 @@
                     <h6 class="text-center"><i>Malam Kabir Yusuf Bashir C.E.O <a href="https://teampiccolo.com">teampiccolo.com</a></i></h6>
                     <div class="row text-left">
                         <div class="col-sm-8 mx-auto">
-                            @php 
-                                if(!empty(session('msg'))){
-                            @endphp
-                                <div class="row my-2 bg-white">
-                                    <div class="col-md-12">
-                                        <h3>
-                                            <p class="text-center">{{session('msg')}}</p>
-                                        </h3>
-                                    </div>
-                                </div>    
-                            @php        
-                                }
-                            @endphp
-                            <div class="row my-3">
+                            <div class="grid grid-cols-2 gap-4 items-center shadow p-8 mt-5">
                                 <div class="col-sm-6">
                                     <form class="form" action="/contact-us" method="POST">
                                         @csrf
 
                                         <div class="col-sm-12 my-2">
                                             <b><label for="full-name">Full Name</label></b>
-                                            <input class="form-control" type="text" name="name">
+                                            <input class="input-field" type="text" name="name">
                                         </div>
                                         <div class="col-sm-12 my-2">
                                             <b><label for="phone">Phone</label></b>
-                                            <input class="form-control" type="phone" name="phone">
+                                            <input class="input-field" type="phone" name="phone">
                                         </div>
                                         <div class="col-sm-12 my-2">
                                             <b><label for="email-address">Email Address</label></b>
-                                            <input class="form-control" type="email" name="email_address">
+                                            <input class="input-field" type="email" name="email_address">
                                         </div>
                                         <div class="col-sm-12 my-2">
                                             <b><label for="subject">Subject</label></b>
-                                            <input class="form-control" type="text" name="subject">
+                                            <input class="input-field" type="text" name="subject">
                                         </div>
                                         <div class="col-sm-12 my-2">
                                             <b><label for="message">Message</label></b>
-                                            <textarea class="form-control" name="message"></textarea>
+                                            <textarea class="input-field" name="message"></textarea>
                                         </div>
                                         <div class="col-sm-12 my-4">
-                                            <input class="form-control btn btn-success w-100" type="submit" name="contact_us" value="Send">
+                                            <input class="input-field bg-green-600 rounded text-white" type="submit" name="contact_us" value="Send">
                                         </div>
                                     </form>
                                 </div>
@@ -90,37 +77,37 @@
                                                 href="https://fb.me/KamusunHausa"
                                                 target="_blank"
                                                 class="btn contact-details"
-                                                ><i class="fab fa-facebook-square"></i></a>
+                                                ><i class="text-3xl fab fa-facebook-square"></i></a>
                                                 
                                                 <a
                                                 href="https://twitter.com/kamusunhausa"
                                                 target="_blank"
                                                 class="btn"
-                                                ><i class="fab fa-twitter"></i></a>
+                                                ><i class="text-3xl fab fa-twitter"></i></a>
 
                                                 <a
                                                 href="https://instagram.com/kamusunhausa"
                                                 target="_blank"
                                                 class="btn"
-                                                ><i class="fab fa-instagram"></i></a>
+                                                ><i class="text-3xl fab fa-instagram"></i></a>
 
                                                 <a
                                                 href="https://wa.me/message/BAXZQJJ3WFEBA1"
                                                 target="_blank"
                                                 class="btn"
-                                                ><i class="fab fa-whatsapp"></i></a>
+                                                ><i class="text-3xl fab fa-whatsapp"></i></a>
                                             </div>
 
                                             <div class="row my-3 mx-1">
                                                 <a class="text-dark" href="tel:+2348066626200">
-                                                    <i class="fas fa-phone"></i> 
+                                                    <i class="text-3xl fas fa-phone"></i> 
                                                     <b class="mx-4">08026713714</b>
                                                 </a>
                                             </div>
 
                                             <div class="row my-3 mx-1">
                                                 <a class="text-dark" href="mailto:info@kamusdictionary.com">
-                                                    <i class="fas fa-envelope-square"></i> 
+                                                    <i class="text-3xl fas fa-envelope-square"></i> 
                                                     <b class="mx-2">info@kamusdictionary.com</b>
                                                 </a>
                                             </div>

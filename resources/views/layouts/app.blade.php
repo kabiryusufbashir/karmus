@@ -182,13 +182,10 @@
                                     <span>Proverbs</span>
                                 </a>
                             </li>
-                            <li class="py-1 hover:text-green-400 addANewWordFooter cursor-pointer">
-                                <span class="flex items-center py-1">Add A New Word</span>
-                            </li>
                         </div>
                         <div>
                             <li class="py-1 hover:text-green-400">
-                                <a class="flex items-center py-1" href="#">
+                                <a class="flex items-center py-1" href="/faqs">
                                     <span>FAQs</span>
                                 </a>
                             </li>
@@ -198,17 +195,7 @@
                                 </a>
                             </li>
                             <li class="py-1 hover:text-green-400">
-                                <a class="flex items-center py-1" href="#">
-                                    <span>Sign Up</span>
-                                </a>
-                            </li>
-                            <li class="py-1 hover:text-green-400">
-                                <a class="flex items-center py-1" href="#">
-                                    <span>Sign In</span>
-                                </a>
-                            </li>
-                            <li class="py-1 hover:text-green-400">
-                                <a class="flex items-center py-1" href="#">
+                                <a class="flex items-center py-1" href="/contact-us">
                                     <span>Contact Us</span>
                                 </a>
                             </li>
